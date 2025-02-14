@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deb's Cleaning Services</title>
+  <link rel="stylesheet" href="bookings.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Custom CSS for form sections with hover effects */
+    .form-section {
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .form-section:hover {
+      border-color: #007BFF;
+      box-shadow: 0 4px 6px -1px rgba(0, 123, 255, 0.1);
+    }
+    .form-section:focus-within {
+      border-color: #007BFF;
+      background-color: #f8f9fa;
+    }
+    /* Service card styling */
+    .service-card {
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .service-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px -1px rgba(0, 123, 255, 0.1);
+    }
+    .service-card.selected {
+      border-color: #007BFF;
+      background-color: #e0f0ff;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <img src="logo.jpg" alt="Deb's Cleaning Services Logo" class="logo" />
+      <span class="motto">"Cleaning Beyond Expectations, Every Time"</span>
+      <nav>
+        <ul>
+          <a href="debswebsite.html" class="home-btn">Home</a>
+          <a href="services.html" class="home-btn">Services</a>
+          <a href="about.html" class="home-btn">About Us</a>
+          <a href="forms.html" class="home-btn">Forms/Quotes</a>
+          <a href="support.html" class="home-btn">Support</a>
+          <a href="faq.html" class="home-btn">FAQ</a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="banner">
+    <div class="video-background">
+      <video autoplay muted loop id="background-video">
+        <source src="cleaning-1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="banner-content">
+      <h1>Book Your Cleaning Service</h1>
+      <p>Get your space sparkling clean with just a few clicks!</p>
+      <a href="#booking-form" class="btn">Book Now</a>
+    </div>
+  </section>
+
+
+<!-- Integrated Booking Section -->
+<form id="bookingForm" action="forms-php.php" method="POST">
+  <div class="container mx-auto p-6" id="booking-form">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-screen-lg mx-auto">
+      
+      <!-- Left Column - Booking Form -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <!-- Personal Information Section -->
+        <div class="form-section mb-6">
+          <h3 class="text-xl font-semibold mb-4">Personal Information</h3>
+          <label class="block mb-2">
+            Name:
+            <input type="text" name="name" required class="border p-2 w-full rounded" />
+          </label>
+          <label class="block mb-2">
+            Email:
+            <input type="email" name="email" required class="border p-2 w-full rounded" />
+          </label>
+          <label class="block mb-2">
+            Phone:
+            <input type="tel" name="phone" required class="border p-2 w-full rounded" />
+          </label>
+        </div>
+
+        <!-- Service Details Section -->
+        <div class="form-section mb-6">
+          <h3 class="text-xl font-semibold mb-4">Service Details</h3>
+
+          <!-- Type of Service -->
+          <div class="form-section mb-6">
+            <h3 class="text-xl font-semibold mb-4">Type of Service</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <label class="service-card">
+                <input type="radio" name="service-type" value="standard-cleaning" class="hidden peer" required>
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Standard Cleaning</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="service-type" value="deep-cleaning" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Deep Cleaning</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="service-type" value="office-cleaning" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Office Cleaning</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="service-type" value="move-in-out" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Move-In/Move-Out</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="service-type" value="custom-request" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Custom Request</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Frequency of Service -->
+          <div class="form-section mb-6">
+            <h3 class="text-xl font-semibold mb-4">Frequency of Service</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <label class="service-card">
+                <input type="radio" name="frequency" value="one-time" class="hidden peer" required>
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">One-Time</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="frequency" value="weekly" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Weekly</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="frequency" value="bi-weekly" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Bi-Weekly</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="frequency" value="monthly" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Monthly</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <label class="block mb-2">
+            Number of Rooms:
+            <input type="text" name="rooms" id="rooms" placeholder="Bedrooms, Bathrooms, Living Areas, Kitchen, etc." class="w-full p-2 border rounded" />
+          </label>
+          <label class="block mb-2">
+            Square Footage of Home/Office:
+            <input type="number" name="square-footage" id="square-footage" placeholder="e.g., 1500 sqft" class="w-full p-2 border rounded" />
+          </label>
+          <label class="block mb-2">
+            Any Pets?
+            <select name="pets" id="pets" class="w-full p-2 border rounded">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </label>
+          <div id="pet-details" class="mb-2 hidden">
+            <label class="block mb-2">
+              Additional Info:
+              <textarea name="pet-info" id="pet-info" placeholder="Specify pet details" class="w-full p-2 border rounded"></textarea>
+            </label>
+          </div>
+
+          <!-- Preferred Cleaning Products -->
+          <div class="form-section mb-6">
+            <h3 class="text-xl font-semibold mb-4">Preferred Cleaning Products</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <label class="service-card">
+                <input type="radio" name="cleaning-products" value="standard" class="hidden peer" required>
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Standard Products</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="cleaning-products" value="eco-friendly" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Eco-Friendly</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="cleaning-products" value="fragrance-free" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Fragrance-Free</p>
+                </div>
+              </label>
+              <label class="service-card">
+                <input type="radio" name="cleaning-products" value="client-provided" class="hidden peer">
+                <div class="w-full p-6 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white text-center cursor-pointer">
+                  <p class="text-sm">Client-Provided</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scheduling Preferences -->
+        <div class="form-section mb-6">
+          <h3 class="text-xl font-semibold mb-4">Scheduling Preferences</h3>
+          <label class="block mb-2">
+            Preferred Date & Time:
+            <input type="datetime-local" name="preferred-date" id="preferred-date" class="w-full p-2 border rounded" />
+          </label>
+          <label class="block mb-2">
+            Alternative Date & Time (Optional):
+            <input type="datetime-local" name="alternative-date" id="alternative-date" class="w-full p-2 border rounded" />
+          </label>
+          <label class="block mb-2">
+            Urgency Level:
+            <select name="urgency" id="urgency" class="w-full p-2 border rounded">
+              <option value="standard">Standard Booking</option>
+              <option value="urgent">Urgent Cleaning – Same-Day if Available</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Specific Areas to Focus On -->
+        <div class="form-section mb-6">
+          <h3 class="text-xl font-semibold mb-4">Specific Areas to Focus On</h3>
+          <textarea name="focus-areas" id="focus-areas" class="w-full p-2 border rounded" placeholder="Enter specific areas to focus on"></textarea>
+        </div>
+
+        <!-- Entry Instructions -->
+        <div class="form-section mb-6">
+          <h3 class="text-xl font-semibold mb-4">Entry Instructions</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <label class="entry-card">
+              <input type="radio" name="entry-method" value="Reception Check-In" class="hidden peer">
+              <div class="p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <p>Reception Check-In</p>
+              </div>
+            </label>
+            <label class="entry-card">
+              <input type="radio" name="entry-method" value="Key Card Access" class="hidden peer">
+              <div class="p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <p>Key Card Access</p>
+              </div>
+            </label>
+            <label class="entry-card">
+              <input type="radio" name="entry-method" value="Security Desk" class="hidden peer">
+              <div class="p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <p>Security Desk</p>
+              </div>
+            </label>
+            <label class="entry-card">
+              <input type="radio" name="entry-method" value="Intercom" class="hidden peer">
+              <div class="p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <p>Intercom Call</p>
+              </div>
+            </label>
+            <label class="entry-card">
+              <input type="radio" name="entry-method" value="Lockbox" class="hidden peer">
+              <div class="p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <p>Back Entrance / Lockbox</p>
+              </div>
+            </label>
+            <label class="entry-card">
+              <input type="radio" name="entry-method" value="Other" class="hidden peer">
+              <div class="p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <p>Other</p>
+              </div>
+            </label>
+          </div>
+          <div id="otherEntryInstructions" class="mt-4 hidden">
+            <textarea name="other-entry-text" class="w-full p-2 border rounded" placeholder="Enter your entry instructions"></textarea>
+          </div>
+        </div>
+
+        <!-- Extra Services -->
+        <div class="form-section mb-6">
+          <h3 class="text-xl font-semibold mb-4">Extra Services</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <label class="service-card">
+              <input type="checkbox" name="extra-services[]" value="Fridge Cleaning" class="hidden peer">
+              <div class="w-full p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <i class="fas fa-ice-cream text-2xl mb-1"></i>
+                <p class="text-sm text-center">Inside Fridge Cleaning</p>
+              </div>
+            </label>
+            <label class="service-card">
+              <input type="checkbox" name="extra-services[]" value="Oven Cleaning" class="hidden peer">
+              <div class="w-full p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <i class="fas fa-toothbrush text-2xl mb-1"></i>
+                <p class="text-sm text-center">Inside Oven Cleaning</p>
+              </div>
+            </label>
+            <label class="service-card">
+              <input type="checkbox" name="extra-services[]" value="Eco-Friendly" class="hidden peer">
+              <div class="w-full p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <i class="fas fa-spray-can text-2xl mb-1"></i>
+                <p class="text-sm text-center">Eco-Friendly Products</p>
+              </div>
+            </label>
+            <label class="service-card">
+              <input type="checkbox" name="extra-services[]" value="Construction" class="hidden peer">
+              <div class="w-full p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <i class="fas fa-cogs text-2xl mb-1"></i>
+                <p class="text-sm text-center">Post-Construction</p>
+              </div>
+            </label>
+            <label class="service-card">
+              <input type="checkbox" name="extra-services[]" value="After-Party" class="hidden peer">
+              <div class="w-full p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <i class="fas fa-paint-roller text-2xl mb-1"></i>
+                <p class="text-sm text-center">After-Party Cleanup</p>
+              </div>
+            </label>
+            <label class="service-card">
+              <input type="checkbox" name="extra-services[]" value="Windows" class="hidden peer">
+              <div class="w-full p-4 border rounded shadow-md bg-gray-100 hover:bg-blue-200 peer-checked:bg-blue-500 peer-checked:text-white cursor-pointer">
+                <i class="fas fa-broom text-2xl mb-1"></i>
+                <p class="text-sm text-center">Window Cleaning</p>
+              </div>
+            </label>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Dishwashing Service">
+                <i class="fas fa-utensils text-2xl mb-1"></i>
+                <p class="text-sm text-center">Dishwashing Service</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Baseboard & Trim Detailing">
+                <i class="fas fa-ruler-combined text-2xl mb-1"></i>
+                <p class="text-sm text-center">Baseboard & Trim Detailing</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Garage or Patio Cleaning">
+                <i class="fas fa-warehouse text-2xl mb-1"></i>
+                <p class="text-sm text-center">Garage or Patio Cleaning</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Pet Hair & Odor Treatment">
+                <i class="fas fa-paw text-2xl mb-1"></i>
+                <p class="text-sm text-center">Pet Hair & Odor Treatment</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Blinds & Shutter Cleaning">
+                <i class="fas fa-blinds text-2xl mb-1"></i>
+                <p class="text-sm text-center">Blinds & Shutter Cleaning</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Light Fixture Cleaning">
+                <i class="fas fa-lightbulb text-2xl mb-1"></i>
+                <p class="text-sm text-center">Light Fixture Cleaning</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Ceiling Fan Cleaning">
+                <i class="fas fa-fan text-2xl mb-1"></i>
+                <p class="text-sm text-center">Ceiling Fan Cleaning</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Air Vent Cleaning">
+                <i class="fas fa-wind text-2xl mb-1"></i>
+                <p class="text-sm text-center">Air Vent Cleaning</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Mirror & Glass Polishing">
+                <i class="fas fa-mirror text-2xl mb-1"></i>
+                <p class="text-sm text-center">Mirror & Glass Polishing</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Garbage Disposal Cleaning">
+                <i class="fas fa-trash text-2xl mb-1"></i>
+                <p class="text-sm text-center">Garbage Disposal Cleaning</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Door & Frame Cleaning">
+                <i class="fas fa-door-open text-2xl mb-1"></i>
+                <p class="text-sm text-center">Door & Frame Cleaning</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Outdoor Furniture Cleaning">
+                <i class="fas fa-chair text-2xl mb-1"></i>
+                <p class="text-sm text-center">Outdoor Furniture Cleaning</p>
+              </button>
+            </div>
+            <div class="service-card">
+              <button type="button" class="service-btn" data-value="Chandelier Cleaning">
+                <i class="fas fa-star text-2xl mb-1"></i>
+                <p class="text-sm text-center">Chandelier Cleaning</p>
+              </button>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <!-- Terms & Submit -->
+        <div class="form-section mb-6">
+          <label class="block mb-4">
+            <input type="checkbox" name="terms" id="terms" required />
+            I agree to the terms & cancellation policy
+          </label>
+          <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded hover:bg-blue-600">
+            Request Booking
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column - Booking Summary -->
+      <div class="bg-white p-6 rounded-lg shadow-md sticky top-6 self-start">
+        <h2 class="text-2xl font-bold mb-3">Booking Summary</h2>
+        <div id="summary" class="space-y-4">
+          <!-- Summary content will be dynamically populated -->
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Note: Requires Tailwind CSS and Font Awesome for styling -->
+
+  <script>
+    // Show/hide pet details based on selection
+    document.getElementById("pets").addEventListener("change", function () {
+      var petDetails = document.getElementById("pet-details");
+      petDetails.style.display = (this.value === "yes") ? "block" : "none";
+    });
+  
+    // Toggle selection for extra add-on buttons
+    const extraButtons = document.querySelectorAll('.service-btn');
+    extraButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        this.classList.toggle('selected');
+        updateSummary();
+      });
+    });
+  
+    function updateSummary() {
+      const name = bookingForm.elements['name'].value;
+      const email = bookingForm.elements['email'].value;
+      const phone = bookingForm.elements['phone'].value;
+      const serviceType = document.getElementById('service-type').value;
+      const frequency = document.getElementById('frequency').value;
+      const rooms = document.getElementById('rooms').value;
+      const squareFootage = document.getElementById('square-footage').value;
+      const pets = document.getElementById('pets').value;
+      const petInfo = document.getElementById('pet-info').value;
+      const cleaningProducts = document.getElementById('cleaning-products').value;
+      const preferredDate = document.getElementById('preferred-date').value;
+      const alternativeDate = document.getElementById('alternative-date').value;
+      const urgency = document.getElementById('urgency').value;
+      const focusAreas = document.getElementById('focus-areas').value;
+  
+      // For entry instructions, check the selected entry card
+      let entryInstructions = '';
+      const selectedCard = document.querySelector('.entry-card.selected');
+      if (selectedCard) {
+        entryInstructions = selectedCard.getAttribute('data-value');
+        // If "Other" is selected, append the custom instructions from the textarea
+        if (entryInstructions === 'Other') {
+          const otherText = document.getElementById('otherEntryText').value;
+          entryInstructions += otherText ? ': ' + otherText : '';
+        }
+      }
+  
+      // For extra add-ons (if any)
+      const extraAddOns = Array.from(document.querySelectorAll('.service-btn.selected')).map(btn => btn.getAttribute('data-value'));
+    
+      summaryDiv.innerHTML = `
+        <h3 class="text-xl font-semibold">Personal Information:</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+  
+        <h3 class="text-xl font-semibold mt-4">Service Details:</h3>
+        <p><strong>Type of Service:</strong> ${serviceType}</p>
+        <p><strong>Frequency:</strong> ${frequency}</p>
+        <p><strong>Number of Rooms:</strong> ${rooms}</p>
+        <p><strong>Square Footage:</strong> ${squareFootage} sqft</p>
+        <p><strong>Pets:</strong> ${pets}${pets === 'yes' ? `<br><strong>Pet Info:</strong> ${petInfo}` : ''}</p>
+        <p><strong>Preferred Cleaning Products:</strong> ${cleaningProducts}</p>
+  
+        <h3 class="text-xl font-semibold mt-4">Scheduling Preferences:</h3>
+        <p><strong>Preferred Date & Time:</strong> ${preferredDate}</p>
+        <p><strong>Alternative Date & Time:</strong> ${alternativeDate}</p>
+        <p><strong>Urgency Level:</strong> ${urgency}</p>
+  
+        <h3 class="text-xl font-semibold mt-4">Special Requests & Instructions:</h3>
+        <p><strong>Specific Areas to Focus On:</strong> ${focusAreas}</p>
+        <p><strong>Entry Instructions:</strong> ${entryInstructions}</p>
+  
+        <h3 class="text-xl font-semibold mt-4">Extra Add-Ons / Selected Services:</h3>
+        <p>${extraAddOns.join(', ')}</p>
+      `;
+    }
+  
+    // Existing code: event listeners for entry cards
+    const entryCards = document.querySelectorAll('.entry-card');
+    entryCards.forEach(card => {
+      card.addEventListener('click', function () {
+        // Remove the 'selected' class from all entry cards
+        entryCards.forEach(c => c.classList.remove('selected'));
+        // Add 'selected' class to the clicked card
+        this.classList.add('selected');
+        // Show or hide the "Other" text area
+        if (this.getAttribute('data-value') === 'Other') {
+          document.getElementById('otherEntryInstructions').style.display = 'block';
+        } else {
+          document.getElementById('otherEntryInstructions').style.display = 'none';
+        }
+        updateSummary();
+      });
+    });
+  
+    // Update the summary when the custom entry instructions are modified
+    document.getElementById('otherEntryText').addEventListener('input', updateSummary);
+  
+    // Update the summary when other form fields are changed
+    const bookingForm = document.getElementById('bookingForm');
+    const summaryDiv = document.getElementById('summary');
+    bookingForm.addEventListener('input', updateSummary);
+  
+    // Initial update on page load
+    updateSummary();
+  </script>
+  
+  <!-- Footer Section -->
+  <footer>
+    <section class="cta">
+      <div class="container">
+        <h2>Ready for a Cleaner Space?</h2>
+        <p>Contact us today and let’s make your home or office shine!</p>
+        <a href="forms.html" class="btn">Get a Free Quote</a>
+      </div>
+      <div class="social-media">
+        <a href="https://facebook.com/debscleaning" target="_blank" aria-label="Deb's Cleaning Services on Facebook">
+          <img src="fb.jpeg" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com/debs_cleaning" target="_blank" aria-label="Deb's Cleaning Services on Twitter">
+          <img src="twitter.jpeg" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com/debs_cleaning" target="_blank" aria-label="Deb's Cleaning Services on Instagram">
+          <img src="insta.jpeg" alt="Instagram" />
+        </a>
+      </div>
+    </section>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Deb's Cleaning Services</p>
+      <div class="footer-links">
+        <a href="privacy-policy.html" class="footer-link">Privacy Policy</a> |
+        <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

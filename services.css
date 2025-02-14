@@ -1,0 +1,468 @@
+/* Global Styles */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f4f4f4;
+   color: #333;
+}
+
+a {
+   text-decoration: none;
+   color: #2477BF;
+}
+
+a:hover {
+   color: #1d5f91;
+}
+
+/* Header and Navigation */
+/* Header Styling */
+header {
+   background-color: #2477BF;
+   color: #fff;
+   padding: 15px 0;
+   position: relative;
+   z-index: 100;
+   overflow: visible !important;
+}
+
+/* Container styling to position logo to left and menu to right */
+header .container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 20px; /* Adjust padding as needed */
+   height: 40px; /* Set the height for the header */
+   background-color: #2477BF; /* Add background color if needed */
+}
+
+
+/* Logo styling: Reduced size and aligned left by default in flex */
+.logo {
+   max-width: 100px; /* Half of the original 200px */
+   height: auto;     /* Maintain aspect ratio */
+}
+
+.motto {
+   font-family: Arial, sans-serif; /* Use Arial as the primary font */
+   font-style: italic; /* Make the text italic */
+   font-size: 1.0em; /* Adjust size as needed */
+   color: #FFF; /* Gold color for visibility */
+   font-weight: bold;
+   margin-left: 5px; /* Space from the logo */
+   white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Navigation Styling */
+nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   gap: 15px; /* Space between menu items */
+}
+
+nav ul li {
+   display: inline-block;
+}
+
+nav ul li a {
+   color: #fff;
+   text-decoration: none;
+   padding: 5px 10px;
+   transition: all 0.3s;
+}
+
+/* Home Button Styling */
+.home-btn {
+   background-color: #2477BF; /* Primary color */
+   color: #fff;
+   padding: 12px 20px;
+   text-decoration: none;
+   border-radius: 5px;
+   transition: background 0.3s ease;
+}
+
+.home-btn:hover {
+   background-color: #FFD700; /* Hover color */
+   color: #2477BF;
+}
+
+/* Hero Banner Styles (with Video) */
+#services-header {
+   position: relative;
+   text-align: center;
+   padding: 100px 0;
+   color: #fff;
+}
+
+#services-header .video-background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   z-index: -1;
+}
+
+#services-header video {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+#services-header h1 {
+   font-size: 40px;
+   margin-bottom: 10px;
+}
+
+#services-header p {
+   font-size: 20px;
+   margin-bottom: 20px;
+}
+
+#services-header .btn-primary {
+   background-color: #FF9800;
+   color: #fff;
+   padding: 15px 30px;
+   font-size: 16px;
+   text-decoration: none;
+   border-radius: 5px;
+}
+
+#services-header .btn-primary:hover {
+   background-color: #F57C00;
+}
+
+/* Service Grid Container */
+.service-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 20px;
+   padding: 20px 0;
+}
+
+/* Service Box Styling (using blue box theme) */
+.service-box {
+   background-color: #2477BF;  /* Blue background */
+   color: #fff;                /* White text */
+   padding: 30px;
+   border-radius: 8px;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-box:hover {
+   transform: translateY(-5px);
+   background-color: #195a8c;  /* Darker blue on hover */
+}
+
+.service-box h2,
+.service-box p,
+.service-box ul,
+.service-box ul li {
+    color: #fff; /* Ensure text remains white */
+}
+
+.service-box p {
+   font-size: 18px;
+   margin-bottom: 15px;
+   color: #fff;
+}
+
+.service-box ul {
+   list-style-type: disc;
+   padding-left: 20px;
+   margin-bottom: 15px;
+   color: #fff;
+}
+
+.service-box ul li {
+   font-size: 16px;
+   color: #fff;
+}
+
+.service-box .btn-primary {
+   background-color: #fff;     /* Button inverts to white */
+   color: #2477BF;            /* Blue text for contrast */
+   padding: 10px 20px;
+   font-size: 16px;
+   text-decoration: none;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+}
+
+.service-box .btn-primary:hover {
+   background-color: #f0f0f0;
+}
+
+/* Grid layout for Service Details */
+.service-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 20px;
+}
+
+/* Why Choose Us Section */
+#Why-Choose-Us {
+   background-color: #fff;
+   padding: 50px 0;
+   text-align: center;
+}
+
+#Why-Choose-Us h2 {
+   font-size: 36px;
+   margin-bottom: 30px;
+}
+
+.reasons {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 30px;
+}
+
+.reason {
+   background-color: #e6f2ff;
+   padding: 20px;
+   border-radius: 8px;
+}
+
+.reason h3 {
+   color: #fff;                /* White text */
+   background-color: #2477BF;   /* Blue background */
+   padding: 15px 20px;         /* Reduced padding for a compact look */
+   border-radius: 8px;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   margin: 0;                  /* Reset margin if necessary */
+}
+
+.reason p {
+   font-size: 16px;
+}
+
+/* Testimonials Section */
+#testimonials {
+   background-color: #d8d5d1;
+   color: #fff;
+   padding: 50px 0;
+   text-align: center;
+}
+
+#testimonials h2 {
+   font-size: 36px;
+   margin-bottom: 30px;
+}
+
+.testimonial-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 30px;
+}
+
+.testimonial {
+   background-color: #fff;
+   color: #000;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+   font-size: 16px;
+   font-style: italic;
+}
+
+/* Pricing Table */
+#pricing {
+   padding: 50px 0;
+   background-color: #fff;
+   text-align: center;
+}
+
+#pricing h2 {
+   font-size: 36px;
+   margin-bottom: 30px;
+}
+
+.pricing-table {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+}
+
+/* --- Pricing Cards as Blue Boxes --- */
+.pricing-card {
+   background-color: #2477BF;  /* Blue background */
+   color: #fff;                /* White text */
+   padding: 30px;
+   border-radius: 8px;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card:hover {
+   transform: translateY(-5px);
+   background-color: #195a8c;  /* Darker blue on hover */
+}
+
+.pricing-card h3 {
+   font-size: 28px;
+   margin-bottom: 15px;
+   color: #fff;
+}
+
+.pricing-card p {
+   font-size: 16px;
+   margin-bottom: 15px;
+   color: #fff;
+}
+
+.pricing-card .btn-secondary {
+   background-color: #fff;  /* Inverted button style */
+   color: #2477BF;
+   padding: 10px 20px;
+   text-decoration: none;
+   border-radius: 5px;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pricing-card .btn-secondary:hover {
+   background-color: #f0f0f0;
+   color: #2477BF;
+}
+
+/* Grid layout for Pricing Table */
+.pricing-table {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+}
+
+/* Call to Action Section */
+.cta-section {
+   background-color: #2477BF;
+   color: #fff;
+   padding: 50px 0;
+   text-align: center;
+}
+
+.cta-section h2 {
+   font-size: 36px;
+   margin-bottom: 20px;
+}
+
+.cta-section p {
+   font-size: 20px;
+   margin-bottom: 30px;
+}
+
+.cta-section .btn-primary {
+   background-color: #FFF;
+   color: #fff;
+   padding: 15px 30px;
+   font-size: 16px;
+   text-decoration: none;
+   border-radius: 5px;
+}
+
+.cta-section .btn-primary:hover {
+   background-color: #FFF;
+}
+
+/* Footer Section */
+footer {
+   background-color: #2477BF;
+   color: white;
+   padding: 30px 0;
+   text-align: center;
+}
+
+footer .cta {
+   padding: 20px;
+}
+
+footer .cta .container {
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+footer .cta h2 {
+   font-size: 1.8rem;
+   margin-bottom: 10px;
+}
+
+footer .cta p {
+   margin-bottom: 15px;
+   font-size: 1.2rem;
+}
+
+footer .cta .btn {
+   background-color: #195a8c;
+   padding: 10px 20px;
+   border-radius: 5px;
+   color: white;
+   text-decoration: none;
+   font-size: 1.1rem;
+}
+
+footer .cta .btn:hover {
+   background-color: #134f72;
+}
+
+footer .social-media {
+   margin-top: 20px;
+}
+
+footer .social-media a {
+   margin: 0 10px;
+   display: inline-block;
+}
+
+footer .social-media a img {
+   width: 30px;
+   height: 30px;
+   transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover img {
+   transform: scale(1.1);
+}
+
+footer .footer-bottom {
+   margin-top: 30px;
+}
+
+footer .footer-bottom p {
+   font-size: 1rem;
+}
+
+footer .footer-links {
+   margin-top: 10px;
+}
+
+footer .footer-link {
+   color: white;
+   text-decoration: none;
+}
+
+footer .footer-link:hover {
+   text-decoration: underline;
+}
+
+/* Sticky Footer */
+html, body {
+   height: 100%;
+}
+
+footer {
+   position: relative;
+   bottom: 0;
+   width: 100%;
+}
