@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="about.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Additional styles for the new toggle section -->
+  <style>
+    /* Toggle Section Styling */
+    .toggle-section {
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+    .toggle-section .container {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .toggle-section .left-image,
+    .toggle-section .right-content {
+      flex: 0 0 50%;
+      padding: 20px;
+    }
+    .toggle-section .left-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .toggle-buttons {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .toggle-buttons .toggle-btn {
+      background-color: #2477BF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    .toggle-buttons .toggle-btn.active {
+      background-color: #FFD700;
+      color: #2477BF;
+    }
+    .toggle-content .content {
+      display: none;
+    }
+    .toggle-content .content.active {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .toggle-section .left-image,
+      .toggle-section .right-content {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <img src="logo.jpg" alt="Deb's Cleaning Services Logo" class="logo">
+        <span class="motto">"Cleaning Beyond Expectations, Every Time"</span>
+        <nav>
+                <ul>
+                    <a href="debswebsite.html" class="home-btn">Home</a>
+                    <a href="services.html" class="home-btn">Services</a>
+                    <a href="about.html" class="home-btn">About Us</a>
+                    <a href="forms.html" class="home-btn">Forms/Quotes</a>
+                    <a href="support.html" class="home-btn">Support</a>
+                    <a href="faq.html" class="home-btn">FAQ</a>
+                </ul>
+        </nav>
+    </div>
+</header>
+
+  <!-- "Why Choose Us" Section -->
+  <section id="Why-Choose-Us">
+    <h2>Why Choose Deb's Cleaning Services?</h2>
+    <p>"Cleaning Beyond Expectation, Every Time"</p>
+  </section>
+
+  <!-- Parallax Section 1 -->
+  <div class="parallax" style="background-image: url('City-Tour-Port-of-Spain-1.jpg');"></div>
+
+  <!-- Icons Section -->
+  <section class="icons-section">
+    <div class="icon-item">
+      <i class="fas fa-heart"></i>
+      <h3>We Value Our Cleaners</h3>
+      <p>Professionals are able to do what they love when and where they want</p>
+    </div>
+    <div class="icon-item">
+      <i class="fas fa-chart-line"></i>
+      <h3>Constant Improvement</h3>
+      <p>Improve service quality through customer feedback</p>
+    </div>
+    <div class="icon-item">
+      <i class="fas fa-binoculars"></i>
+      <h3>Track Cleaning Progress</h3>
+      <p>Use our app to monitor cleaner's schedule and progress</p>
+    </div>
+    <div class="icon-item">
+      <i class="fas fa-handshake"></i>
+      <h3>Improving Relationships</h3>
+      <p>Strengthen community connections through our service</p>
+    </div>
+    <div class="icon-item">
+      <i class="fas fa-calendar-check"></i>
+      <h3>Book a Cleaner Today</h3>
+      <p>Easy online booking system available 24/7</p>
+    </div>
+    <div class="icon-item">
+      <i class="fas fa-concierge-bell"></i>
+      <h3>More Cleaning Services</h3>
+      <p>Comprehensive cleaning solutions for all needs</p>
+    </div>
+  </section>
+
+  <!-- Parallax Section 2 -->
+  <div class="parallax" style="background-image: url('Internationalfinancecentre.jpeg');"></div>
+
+  <!-- NEW Toggle Section: Image on the Left, Toggleable Text on the Right -->
+  <section class="toggle-section">
+    <div class="container">
+      <!-- Left Side: Image -->
+      <div class="left-image">
+        <img src="Cleaning_Service_Banner.jpg" alt="About Deb's Cleaning Services">
+      </div>
+      <!-- Right Side: Toggle Buttons & Content -->
+      <div class="right-content">
+        <div class="toggle-buttons">
+          <button class="toggle-btn active" data-target="about-content">About</button>
+          <button class="toggle-btn" data-target="mission-content">Mission</button>
+          <button class="toggle-btn" data-target="story-content">Story</button>
+        </div>
+        <div class="toggle-content">
+          <div id="about-content" class="content active">
+            <h2>About Us</h2>
+            <p>At <strong>Deb's Cleaning Services</strong> our vision is to set the standard for excellence in the cleaning industry in Trinidad and Tobago. We strive to create cleaner, healthier and more inviting spaces for our clients by combining professional eco-friendly solutions and unmatched attention to detail. Our commitment is to deliver reliable top-quality cleaning services that exceed expectations and contribute to the wellbeing of the client we serve,</p>
+          </div>
+          <div id="mission-content" class="content">
+            <h2>Our mission</h2>
+                <p><strong> Exceptional Service:</strong></p>
+                <p>We commit to providing top-quality cleaning solutions with passion and precision.</p>
+                <p><strong>Enhance Healthier Spaces:</strong> 
+                <p>Our goal is to create safer, healthier environments for every home and office.</p>
+                <p><strong>Champion Sustainability:</strong> 
+                <p>We employ eco-friendly practices that promote both cleanliness and environmental care.</p>
+                <p><strong>Empower Our Team:</strong> 
+                <p>We invest in our professionals, ensuring they’re trained, respected, and equipped to excel.</p>
+                <p><strong>Innovate Continuously:</strong> 
+                <p>We embrace innovation to refine our methods and exceed customer expectations.</p>
+                <p><strong>Build Trust:</strong> 
+                <p>We strive to be your reliable partner in maintaining immaculate, welcoming spaces.</p>
+
+          </div>
+          <div id="story-content" class="content">
+            <h2>Our Story</h2>
+            <p>Deb's Cleaning Services started with a simple mission: to make homes and businesses shine.</p>
+            <p>Founded in 2020, we have grown into a trusted name in the industry through dedication and customer-first service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Section 3 -->
+  <div class="parallax" style="background-image: url('trinidad 2.jpg');"></div>
+
+  <section id="our-process">
+    <h2>Our Process: From Booking to a Spotless Home</h2>
+
+    <div class="process-steps-container">
+        <div class="process-step">
+            <div class="process-box">
+                <h3>Request a Quote</h3>
+                <ul>
+                    <li>->Click the "Get a Quote" button on our homepage or contact us directly.</li>
+                    <li>->Provide details like the size of your space, cleaning preferences, and any special requests.</li>
+                    <li>->We’ll respond with a personalized quote tailored to your needs.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="process-box">
+                <h3>Schedule Your Cleaning</h3>
+                <ul>
+                    <li>->Once you accept the quote, choose a date and time that works best for you.</li>
+                    <li>->We offer flexible scheduling, including weekends and same-day services (when available).</li>
+                    <li>->Get a confirmation email or message with all the details.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="process-box">
+                <h3>Our Team Arrives</h3>
+                <ul>
+                    <li>->Our trained and professional cleaners arrive on time, fully equipped with eco-friendly cleaning products (if preferred).</li>
+                    <li>->We perform a quick walkthrough to confirm any special instructions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="process-box">
+                <h3>Thorough & Efficient Cleaning</h3>
+                <ul>
+                    <li>->We follow a detailed checklist to ensure every area is cleaned to the highest standard.</li>
+                    <li>->Our team focuses on deep cleaning, sanitization, and organization based on your service selection.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="process-box">
+                <h3>Final Inspection & Customer Satisfaction</h3>
+                <ul>
+                    <li>->Before we leave, we do a final walkthrough to ensure everything meets your expectations.</li>
+                    <li>->You provide feedback, and if needed, we make final touch-ups.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="process-box">
+                <h3>Easy & Secure Payment</h3>
+                <ul>
+                    <li>->Payments can be made via cash, or online transfer (whichever suits you best).</li>
+                    <li>->We offer invoices and receipts for your records.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="process-box">
+                <h3>Enjoy Your Fresh, Clean Space!</h3>
+                <ul>
+                    <li>->Sit back, relax, and enjoy a spotless home or office!</li>
+                    <li>->We’d love to hear your feedback and hope to see you again soon.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Parallax Section 1 -->
+<div class="parallax" style="background-image: url('trinidad.jpeg');"></div>
+
+<!-- Sustainability & Eco-Friendly Practices Section -->
+<section class="eco-practices">
+    <h2>Sustainability & Eco-Friendly Practices at Deb's Cleaning Services</h2>
+    <p>At Deb's Cleaning Services, we are committed to not only delivering exceptional cleaning but also to ensuring our cleaning methods are environmentally responsible. Our approach to eco-friendly cleaning means we prioritize the planet's health as much as we do our clients’ spaces. Here’s how we do it:</p>
+    
+    <div class="eco-boxes">
+      <div class="eco-box">
+        <h3>Green Cleaning Products</h3>
+        <p>Eco-friendly, biodegradable, non-toxic, and hypoallergenic products for a safer environment.</p>
+      </div>
+      <div class="eco-box">
+        <h3>Waste Reduction</h3>
+        <p>Using reusable microfiber cloths and recycling waste for a cleaner planet.</p>
+      </div>
+      <div class="eco-box">
+        <h3>Energy-Efficient Practices</h3>
+        <p>Using energy-efficient tools and minimizing water usage to reduce our carbon footprint.</p>
+      </div>
+      <div class="eco-box">
+        <h3>Sustainable Packaging</h3>
+        <p>Minimal and recyclable packaging to reduce unnecessary waste.</p>
+      </div>
+      <div class="eco-box">
+        <h3>Green Certifications</h3>
+        <p>Working with certified green brands for responsible and sustainable products.</p>
+      </div>
+      <div class="eco-box">
+        <h3>Eco-Friendly Transportation</h3>
+        <p>Using fuel-efficient or electric vehicles for a cleaner, greener service.</p>
+      </div>
+      <div class="eco-box">
+        <h3>Educating Our Team</h3>
+        <p>Training our team on sustainable practices to minimize environmental impact.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why Choose Our Eco-Friendly Services? Section -->
+  <section class="why-eco">
+    <h2>Why Choose Our Eco-Friendly Services?</h2>
+    <div class="eco-boxes">
+      <div class="eco-box">
+        <h3>Healthier Homes & Offices</h3>
+        <p>Our green cleaning methods help create a safer, healthier environment for you.</p>
+      </div>
+      <div class="eco-box">
+        <h3>Supporting a Greener Future</h3>
+        <p>By choosing us, you’re contributing to a more sustainable and eco-friendly world.</p>
+      </div>
+      <div class="eco-box">
+        <h3>Peace of Mind</h3>
+        <p>Our cleaning services are both effective and environmentally responsible.</p>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .eco-practices, .why-eco {
+      text-align: center;
+      margin: 40px 0;
+    }
+  
+    .eco-practices h2, .why-eco h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+  
+    .eco-practices p, .why-eco p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #555;
+    }
+  
+    .eco-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+  
+    .eco-box {
+      background-color: #2477BF;
+      border: 1px solid #ddd;
+      padding: 20px;
+      width: 250px;
+      height: 200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+  
+    .eco-box:hover {
+      background-color: #2477BF;
+      color: white;
+      transform: scale(1.05);
+    }
+  
+    .eco-box h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+  
+    .eco-box p {
+      font-size: 1em;
+      color: #fff;
+    }
+  
+    @media (max-width: 768px) {
+      .eco-box {
+        width: 200px;
+        height: 180px;
+      }
+    }
+  </style>  
+
+  <!-- JavaScript for the toggle functionality -->
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+    const contents = document.querySelectorAll('.toggle-content .content');
+
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Remove active class from all buttons and content blocks
+        toggleButtons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        // Activate the clicked button and its corresponding content
+        this.classList.add('active');
+        const target = this.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+  </script>
+
+      <!-- Footer Section -->
+<footer>
+  <section class="cta">
+      <div class="container">
+          <h2>Ready for a Cleaner Space?</h2>
+          <p>Contact us today and let’s make your home or office shine!</p>
+          <a href="forms.html" class="btn">Get a Free Quote</a>
+      </div>
+      <div class="social-media">
+          <a href="https://facebook.com/debscleaning" target="_blank" aria-label="Deb's Cleaning Services on Facebook">
+              <img src="fb.jpeg" alt="Facebook">
+          </a>
+          <a href="https://twitter.com/debs_cleaning" target="_blank" aria-label="Deb's Cleaning Services on Twitter">
+              <img src="twitter.jpeg" alt="Twitter">
+          </a>
+          <a href="https://instagram.com/debs_cleaning" target="_blank" aria-label="Deb's Cleaning Services on Instagram">
+              <img src="insta.jpeg" alt="Instagram">
+          </a>
+      </div>
+  </section>
+  <div class="footer-bottom">
+      <p>&copy; 2025 Deb's Cleaning Services</p>
+      <div class="footer-links">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a> | 
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+      </div>
+  </div>
+</footer>
+
+</body>
+</html>
